@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "battle";
+    src: url(/fonts/battlefont.woff2) format(woff2);
+}
+
+@font-face {
+    font-family: "jf-dot-shinonome-14";
+    src: url(/fonts/jf-dot-shinonome-14.woff2) format(woff2);
+}
+
+@font-face {
+    font-family: "jf-dot-shinonome-14b";
+    src: url(/fonts/jf-dot-shinonome-14b.woff2) format(woff2);
+}
+
+@font-face {
+    font-family: "jf-dot-mplus-s10b";
+    src: url(/fonts/jf-dot-mplus-s10b.woff2) format(woff2);
+}
+
+@font-face {
+    font-family: "UDKakugoC70Pro-M";
+    src: url(/fonts/UDKakugoC70Pro-M.woff2) format(woff2);
+}
+
+gameover-box {
+	display: block;
+}
+
+gameover-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+text.gameover-label, text.gameover-label > a {
+	font-size: 20pt;
+    line-height: 28pt;
+    font-family: "jf-dot-shinonome-14";
+	text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+}

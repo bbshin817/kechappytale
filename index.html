@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja" rotationType="x">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>KECHAPPYTALE</title>
+    <meta name="description" content="YouTubeチャンネル「ケチャッピー」をモチーフにした、Web版Undertale AUです。">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://kechappytale.com">
+    <meta name="twitter:title" content="kechappytale をプレイ">
+    <meta name="twitter:description" content="YouTubeチャンネル「ケチャッピー」をモチーフにした、Web版Undertale AUです。">
+    <meta name="twitter:image" content="https://kechappytale.com/cards/twitter_card.png">
+    <meta property="og:url" content="https://kechappytale.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="kechappytale をプレイ">
+    <meta property="og:description" content="YouTubeチャンネル「ケチャッピー」をモチーフにした、Web版Undertale AUです。">
+    <meta property="og:site_name" content="kechappytale">
+    <meta property="og:image" content="https://kechappytale.com/cards/ogp_card.png">
+    <link rel="icon" href="/icon/icon_512x512.png" type="image/png" sizes="512x512">
+    <link rel="icon" href="/icon/icon_256x256.png" type="image/png" sizes="256x256">
+    <link rel="icon" href="/icon/icon_128x128.png" type="image/png" sizes="128x128">
+    <link rel="icon" href="/icon/icon_64x64.png" type="image/png" sizes="64x64">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0624D7CL09"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0624D7CL09');
+</script>
+<body>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/global.js"></script>
+<script>
+    let assets = {
+        js : [
+            "ui.js",
+            "engine.js"
+        ],
+        css : [
+            "battle.css",
+            "ui.css"
+        ],
+        bgm : {
+            hope : "hope.mp3",
+            deter : "deter.mp3",
+            win : "win.mp3"
+        },
+        se : {
+            squeak : "squeak.mp3",
+            select : "select.mp3",
+            laz : "laz.mp3",
+            damage : "damage.mp3",
+            hurt : "hurt.mp3",
+            power : "power.mp3"
+        }
+    };
+    let sounds = {};
+</script>
+<display type="splash">
+    <origin>
+        <splash>
+            <logo></logo>
+            <ui-cover>
+                <origin>
+                    <ui-box type="loading">
+                        <loading-bar>
+                            <div style="width: 0%;"></div>
+                        </loading-bar>
+                        <text class="loading-bar-label">
+                            アセットリストを取得しています...
+                        </text>
+                    </ui-box>
+                    <ui-box type="start">
+                        <text class="start-game">クリックでゲーム開始</text>
+                    </ui-box>
+                </origin>
+            </ui-cover>
+            <text class="cc">
+                2024 <a href="https://www.youtube.com/@kechappikami" target="_blank">@kechappikami</a><br>
+                <div style="margin-top: 15px; font-size: 0.5rem;">
+                    ※プレイにあたってはキーボードが必要となります<br>
+                    ※当作品はPRイベント向けに制作されたものであり、ストーリーの細部における展開は含まれておりません。
+                </div>
+            </text>
+        </splash>
+    </origin>
+</display>
+<display type="battle" class="disable">
+    <origin>
+        <row-character>
+            <origin>
+                <kechappy type="default"></kechappy>
+            </origin>
+        </row-character>
+        <row-textbox battle="false" battleAlpha="false">
+            <origin>
+                <row-inner-textbox type="talk"></row-inner-textbox>
+                <row-inner-textbox type="branch"></row-inner-textbox>
+                <row-inner-textbox type="battle">
+                    <origin>
+                        <heart class="vanish"></heart>
+                    </origin>
+                </row-inner-textbox>
+                <fight-target state="false">
+                    <origin>
+                        <div class="fight-target-body"></div>
+                        <div class="fight-target-line"></div>
+                    </origin>
+                </fight-target>
+            </origin>
+        </row-textbox>
+        <row-ui>
+            <text class="username">Guest</text>
+            <text class="lv">Lv 1</text>
+            <text class="hp-label">HP</text>
+            <hp-meter>
+                <div style="width: 100%"></div>
+            </hp-meter>
+            <text class="hp">
+                <span class="now">20</span>
+                <span class="split">/</span>
+                <span class="max">20</span>
+            </text>
+        </row-ui>
+        <row-btn>
+            <btn btnType="battle-option" column="1" row="1" btnValue="fight" state="false"></btn>
+            <btn btnType="battle-option" column="1" row="2" btnValue="act" state="false"></btn>
+            <btn btnType="battle-option" column="1" row="3" btnValue="item" state="false"></btn>
+            <btn btnType="battle-option" column="1" row="4" btnValue="mercy" state="false"></btn>
+        </row-btn>
+    </origin>
+</display>
+<display type="gameover" class="disable">
+    <origin>
+        <gameover-box>
+            <logo></logo>
+            <text class="gameover-label">
+                まけちゃったね！<br>
+                どうでもいいから、ケチャッピーチャンネルをぜひみてね！<br>
+                <a href="https://www.youtube.com/@kechappikami" target="_blank">ケチャッピーチャンネルへ行く</a>
+            </text>
+        </gameover-box>
+    </origin>
+</display>
+<display type="winner" class="disable">
+    <origin>
+        <gameover-box>
+            <logo></logo>
+            <text class="gameover-label">
+                おめでと！それはともかく<br>
+                ケチャッピーチャンネルをぜひみてね！<br>
+                <a href="https://www.youtube.com/@kechappikami" target="_blank">ケチャッピーチャンネルへ行く</a>
+            </text>
+        </gameover-box>
+    </origin>
+</display>
+<input type="range" class="volume" min="0" max="100" value="100">
+</body>
+</html>
